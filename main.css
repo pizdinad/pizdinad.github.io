@@ -1,0 +1,25 @@
+*,
+*:before,
+*:after
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html{
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}
+body{
+	height: 100%;
+	width: 100%;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: #FFFFFF;
+}
+.wrapperElement{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: #000000;
+}
