@@ -1,0 +1,33 @@
+*, *::before, *::after {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  font-family: 'Verdana', 'Arial', 'Helvetica', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.03rem;
+  color: black;
+  cursor: default;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+div {
+  position: relative;
+  display: block;
+}

@@ -1,0 +1,44 @@
+.wrapperElement {
+  position: relative;
+  display: grid;
+  row-gap: 20px;
+  z-index: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  font-size: 18px;
+}
+
+.dateTimeElement {
+  position: relative;
+  display: block;
+  padding: 10px;
+  background-color: #b6e2a4;
+  border: 1px solid black;
+}
+
+.convertMonthElement {
+  position: relative;
+  display: block;
+  padding: 10px;
+  background-color: #b6e2a4;
+  border: 1px solid black;
+}
+
+.convertSelect {
+  font-family: 'Verdana', 'Arial', 'Helvetica', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.03rem;
+  color: black;
+}
+
+.navElement {
+  position: relative;
+  display: block;
+  padding: 10px;
+  background-color: #b6e2a4;
+  border: 1px solid black;
+}
