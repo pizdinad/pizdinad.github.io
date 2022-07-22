@@ -1,1 +1,1 @@
-# pizdinad.github.io
+# https://pizdinad.github.io/
