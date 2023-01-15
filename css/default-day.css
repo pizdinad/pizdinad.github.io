@@ -11,6 +11,15 @@
   font-size: 18px;
 }
 
+.navElement {
+  position: relative;
+  display: block;
+  padding: 10px;
+  background-color: #b6e2a4;
+  border: 1px solid black;
+}
+
+
 .dateTimeElement {
   position: relative;
   display: block;
@@ -35,10 +44,37 @@
   color: black;
 }
 
-.navElement {
+.getAgeElement {
   position: relative;
   display: block;
   padding: 10px;
   background-color: #b6e2a4;
   border: 1px solid black;
 }
+
+.birthdayInputElement {
+  font-family: 'Verdana', 'Arial', 'Helvetica', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.03rem;
+  color: black;
+}
+
+.submitElement {
+  background-color: #65b9fd;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.03rem;
+  color: black;
+  padding: 3px;
+}
+
+
+.footerEl {
+  position: relative;
+  display: block;
+  padding: 10px;
+  background-color: #b6e2a4;
+  border: 1px solid black;
+}
+

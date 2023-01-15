@@ -16,7 +16,23 @@
 
 <body>
 	<div id="wrapperElement" class="wrapperElement">
+
+
+		<div id="navElement" class="navElement">
+			<a href="https://github.com/pizdinad" target="_blank">github repositories</a> | <a href="https://pizdinad.ru"
+				target="_blank">pizdinad.ru</a> |
+		</div>
+
+
+
+
+
 		<div id="dateTimeElement" class="dateTimeElement"></div>
+
+
+
+
+
 		<div id="convertMonthElement" class="convertMonthElement">
 			<div class="label mb-5">Convert month:</div>
 			<select id="selectMonthDigitElement" class="convertSelect selectMonthDigitElement">
@@ -51,10 +67,52 @@
 			</select>
 		</div>
 
-		<div id="navElement" class="navElement">
-			<a href="https://github.com/pizdinad" target="_blank">github repositories</a> | <a href="https://pizdinad.ru" target="_blank">pizdinad.ru</a>
+
+
+
+
+
+
+
+
+
+		<div id="getAgeElement" class="getAgeElement">
+			<form action="" id="getAgeFormElement">
+				<div class="label mb-5">
+					Enter your date of birth:
+				</div>
+				<div class="mb-5 p-5">
+					<div class="d-inline-block">
+						<input name="birthday" id="birthdayInputElement" type="date" required class="birthdayInputElement">
+					</div>
+					<div class="d-inline-block">
+						<input type="submit" value="submit" class="submitElement">
+					</div>
+				</div>
+				<div>
+					<div class="d-inline-block fw-bold">Your age:</div>
+					<div id="ageElement" class="d-inline-block"></div>
+				</div>
+			</form>
 		</div>
-		
+
+
+
+
+
+
+
+
+
+		<div class="footerEl">
+			&copy;2021-<span id="endCopyEl"></span> by <a href="mailto:1@pizdinad.ru" target="_blank">1@pizdinad.ru</a>
+		</div>
+
+
+
+
+
+
 	</div>
 	<script type="text/javascript" src="./js/MainClass.js" defer></script>
 </body>
