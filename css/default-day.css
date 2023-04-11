@@ -1,7 +1,7 @@
 .wrapperElement {
   position: relative;
   display: grid;
-  row-gap: 20px;
+  row-gap: 30px;
   z-index: 1;
   overflow-x: auto;
   overflow-y: auto;
@@ -16,7 +16,7 @@
   /* background-color: #40826D; */
   /* background-color: #DAA520; */
   padding: 30px;
-  border: 1px solid #DAA520;
+  border: 10px solid #DAA520;
 }
 
 .navElement {
