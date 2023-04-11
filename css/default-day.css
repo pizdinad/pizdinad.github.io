@@ -14,32 +14,34 @@
 .block_1{
   /* background-color: #b6e2a4; */
   /* background-color: #40826D; */
-  background-color: #DAA520;
+  /* background-color: #DAA520; */
+  padding: 30px;
+  border: 1px solid #DAA520;
 }
 
 .navElement {
   position: relative;
   display: block;
-  padding: 10px;
   
-  border: 1px solid black;
+  
+  
 }
 
 
 .dateTimeElement {
   position: relative;
   display: block;
-  padding: 10px;
   
-  border: 1px solid black;
+  
+  
 }
 
 .convertMonthElement {
   position: relative;
   display: block;
-  padding: 10px;
   
-  border: 1px solid black;
+  
+  
 }
 
 .convertSelect {
@@ -53,9 +55,9 @@
 .getAgeElement {
   position: relative;
   display: block;
-  padding: 10px;
   
-  border: 1px solid black;
+  
+  
 }
 
 .birthdayInputElement {
@@ -79,8 +81,8 @@
 .footerEl {
   position: relative;
   display: block;
-  padding: 10px;
   
-  border: 1px solid black;
+  
+  
 }
 
