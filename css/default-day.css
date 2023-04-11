@@ -11,11 +11,16 @@
   font-size: 18px;
 }
 
+.block_1{
+  /* background-color: #b6e2a4; */
+  background-color: #40826D;
+}
+
 .navElement {
   position: relative;
   display: block;
   padding: 10px;
-  background-color: #b6e2a4;
+  
   border: 1px solid black;
 }
 
@@ -24,7 +29,7 @@
   position: relative;
   display: block;
   padding: 10px;
-  background-color: #b6e2a4;
+  
   border: 1px solid black;
 }
 
@@ -32,7 +37,7 @@
   position: relative;
   display: block;
   padding: 10px;
-  background-color: #b6e2a4;
+  
   border: 1px solid black;
 }
 
@@ -48,7 +53,7 @@
   position: relative;
   display: block;
   padding: 10px;
-  background-color: #b6e2a4;
+  
   border: 1px solid black;
 }
 
@@ -74,7 +79,7 @@
   position: relative;
   display: block;
   padding: 10px;
-  background-color: #b6e2a4;
+  
   border: 1px solid black;
 }
 
