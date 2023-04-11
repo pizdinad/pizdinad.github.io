@@ -10,40 +10,34 @@
   word-break: normal;
   font-size: 18px;
   padding: 20px;
+
+    border: 15px solid #DAA520;
+    border-radius: 25px;
 }
 
 .block_1{
   padding: 30px;
-  /* border: 10px solid #DAA520; */
-  border-radius: 25px;
+
 }
 
 .navElement {
   position: relative;
   display: block;
-  
-  border-top: 10px solid #DAA520;
-  border-left: 10px solid #DAA520;
-  border-right: 10px solid #DAA520;
+
 }
 
 
 .dateTimeElement {
   position: relative;
   display: block;
-  
-  
-  border-left: 10px solid #DAA520;
-  border-right: 10px solid #DAA520;
+
 }
 
 .convertMonthElement {
   position: relative;
   display: block;
   
-  
-  border-left: 10px solid #DAA520;
-  border-right: 10px solid #DAA520;
+
 }
 
 .convertSelect {
@@ -57,10 +51,7 @@
 .getAgeElement {
   position: relative;
   display: block;
-  
-  
-  border-left: 10px solid #DAA520;
-  border-right: 10px solid #DAA520;
+
 }
 
 .birthdayInputElement {
@@ -85,9 +76,6 @@
   position: relative;
   display: block;
   
-  
-  border-left: 10px solid #DAA520;
-  border-right: 10px solid #DAA520;
-  border-bottom: 10px solid #DAA520;
+
 }
 
