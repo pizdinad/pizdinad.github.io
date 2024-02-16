@@ -11,7 +11,7 @@ https://timeweb.com/ru/?i=114479
 rega:
 https://timeweb.cloud/my/personal-network
 doc:
-https://timeweb.cloud/docs/private-network
+https://timeweb.cloud/docs/private-network - Сервис «Личная сеть»
 https://timeweb.cloud/docs/private-network/wireguard-setup
 
 
