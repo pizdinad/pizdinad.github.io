@@ -59,41 +59,64 @@ function initDateTimeMoscowEl() {
 
   function setContentDateTime() {
     let dateTime = new Date();
+    let timeZoneName, dateTimeStr = ``;
 
-    dateTimeMoscowEl.textContent = dateTime.toLocaleString(locale, {
+
+
+    timeZoneName = dateTime.toLocaleString(locale, {
+      "timeZone": timeZone,
+      "year": "numeric",
+      "timeZoneName": "long",
+    }).slice(6);
+
+    timeZoneName += " (" + dateTime.toLocaleString(locale, {
+      "timeZone": timeZone,
+      "year": "numeric",
+      "timeZoneName": "short",
+    }).slice(6) + ")";
+
+
+
+
+
+
+
+
+
+    dateTimeStr = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "hour": "2-digit",
       "minute": "2-digit",
       "second": "2-digit",
     });
 
-    dateTimeMoscowEl.textContent += " ";
+    dateTimeStr += " ";
 
-    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeStr += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "weekday": "long",
     });
 
-    dateTimeMoscowEl.textContent += " ";
+    dateTimeStr += " ";
 
-    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeStr += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "day": "2-digit",
       "month": "2-digit",
     });
 
-    dateTimeMoscowEl.textContent += "(";
+    dateTimeStr += "(";
 
-    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeStr += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "month": "long",
     });
 
-    dateTimeMoscowEl.textContent += ").";
+    dateTimeStr += ").";
 
 
 
-    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeStr += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
     });
@@ -102,26 +125,19 @@ function initDateTimeMoscowEl() {
 
 
 
-    // dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
-    //   "timeZone": timeZone,
-    //   "timeZoneName": "long",
-    // });
-
-
-    dateTimeMoscowEl.textContent += " (" + dateTime.toLocaleString(locale, {
-      "timeZone": timeZone,
-      "year": "numeric",
-      "timeZoneName": "long",
-    }).slice(6) + ")";
 
 
 
 
-    dateTimeMoscowEl.textContent += " (" + dateTime.toLocaleString(locale, {
-      "timeZone": timeZone,
-      "year": "numeric",
-      "timeZoneName": "short",
-    }).slice(6) + ")";
+
+
+
+    dateTimeMoscowEl.textContent = `
+    <div>${timeZoneName}</div>
+    <div>${dateTimeStr}</div>
+  `;
+
+
 
 
     // ex: "13:47:19 среда 21.02(февраль).2024, Москва, стандартное время (GMT+3)"
@@ -260,7 +276,7 @@ async function initYourIP() {
   const { clientIP } = json;
 
 
-  your_ip_el.textContent = `Your ip: ${clientIP}`;
+  your_ip_el.textContent = `Your ip: ${clientIP} `;
 
   return Promise.resolve(1);
 }
@@ -316,14 +332,14 @@ if ("geolocation" in navigator) {
     var crd = pos.coords;
 
     console.log("Ваше текущее местоположение:"); // !!! ОПРЕДЕЛЯЕТСЯ ПОЗИЦИЯ БРОУЗЕРА (НЕ КОНЕЧНОЙ ТОЧКИ С КОТОРОЙ ВХОДИТ НА САЙТ , НАПРИМЕР VPN)
-    console.log(`Широта: ${crd.latitude}`);
-    console.log(`Долгота: ${crd.longitude}`);
-    console.log(`Плюс-минус ${crd.accuracy} метров.`);
-    console.log(`высота над уровнем моря: ${crd.altitude}`);
+    console.log(`Широта: ${crd.latitude} `);
+    console.log(`Долгота: ${crd.longitude} `);
+    console.log(`Плюс - минус ${crd.accuracy} метров.`);
+    console.log(`высота над уровнем моря: ${crd.altitude} `);
   }
 
   function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
+    console.warn(`ERROR(${err.code}): ${err.message} `);
   }
 
   geo.getCurrentPosition(success, error, options);
