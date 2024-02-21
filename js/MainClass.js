@@ -58,9 +58,9 @@ function initDateTimeMoscowEl() {
   let timerId;
 
   function setContentDateTime() {
+
     let dateTime = new Date();
     let timeZoneName, dateTimeStr = ``;
-
 
 
     timeZoneName = dateTime.toLocaleString(locale, {
@@ -74,11 +74,6 @@ function initDateTimeMoscowEl() {
       "year": "numeric",
       "timeZoneName": "short",
     }).slice(6) + ")";
-
-
-
-
-
 
 
 
@@ -124,23 +119,10 @@ function initDateTimeMoscowEl() {
 
 
 
-
-
-
-
-
-
-
-
     dateTimeMoscowEl.innerHTML = `
     <div>${timeZoneName}</div>
     <div>${dateTimeStr}</div>
   `;
-
-
-
-
-    // ex: "13:47:19 среда 21.02(февраль).2024, Москва, стандартное время (GMT+3)"
 
 
   };
