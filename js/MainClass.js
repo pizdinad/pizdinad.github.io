@@ -15,16 +15,18 @@ const timeZone = "Europe/Moscow";
 const initNowDate = new Date();
 
 
-let dateTimeEl = document.getElementById("dateTimeEl");
+const dateTimeEl = document.getElementById("dateTimeEl");
 
-let selectMonthDigitEl = document.getElementById("selectMonthDigitEl");
-let selectMonthLongEl = document.getElementById("selectMonthLongEl");
+const your_ip_el = document.getElementById("your_ip_el");
 
-let getAgeFormEl = document.getElementById("getAgeFormEl");
-let birthdayInputEl = document.getElementById("birthdayInputEl");
-let ageEl = document.getElementById("ageEl");
+const selectMonthDigitEl = document.getElementById("selectMonthDigitEl");
+const selectMonthLongEl = document.getElementById("selectMonthLongEl");
 
-let endCopyEl = document.getElementById("endCopyEl");
+const getAgeFormEl = document.getElementById("getAgeFormEl");
+const birthdayInputEl = document.getElementById("birthdayInputEl");
+const ageEl = document.getElementById("ageEl");
+
+const endCopyEl = document.getElementById("endCopyEl");
 
 
 
