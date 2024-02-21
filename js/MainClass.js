@@ -209,6 +209,10 @@ function initFooterEl() {
 
 
 
+// function initYourIP(){
+
+
+// }
 
 
 
