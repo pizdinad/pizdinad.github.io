@@ -93,6 +93,16 @@ function initDateTimeMoscowEl() {
 
 
 
+ dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
+      "timeZone": timeZone,
+      "year": "numeric",
+      // "timeZoneName": "long",
+    });
+
+
+
+
+
     // dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
     //   "timeZone": timeZone,
     //   "year": "numeric",
@@ -107,6 +117,10 @@ function initDateTimeMoscowEl() {
       "year": "numeric",
       "timeZoneName": "short",
     }).slice(6) + ")";
+
+
+    // ex: "13:47:19 среда 21.02(февраль).2024, Москва, стандартное время (GMT+3)"
+
 
   };
 
