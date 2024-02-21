@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("pizdinad!");
+console.log("pizdinad");
 
 
 
@@ -15,7 +15,7 @@ let timeZone = "Europe/Moscow";
 const initNowDate = new Date();
 
 
-const dateTimeEl = document.getElementById("dateTimeEl");
+const dateTimeMoscowEl = document.getElementById("dateTimeMoscowEl");
 
 const your_ip_el = document.getElementById("your_ip_el");
 
@@ -51,41 +51,43 @@ function getHTMLDateFormat(dateObj) {
 
 
 
-function initDateTimeEl(locale, timeZone) {
+function initDateTimeMoscowEl() {
+  const locale = "ru-RU";
+  const timeZone = "Europe/Moscow";
   let timerId;
 
   function setContentDateTime() {
     let dateTime = new Date();
 
-    dateTimeEl.textContent = dateTime.toLocaleString(locale, {
+    dateTimeMoscowEl.textContent = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "hour": "2-digit",
       "minute": "2-digit",
       "second": "2-digit",
     });
-    dateTimeEl.textContent += " ";
-    dateTimeEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeMoscowEl.textContent += " ";
+    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "weekday": "long",
     });
-    dateTimeEl.textContent += " ";
-    dateTimeEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeMoscowEl.textContent += " ";
+    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "day": "2-digit",
       "month": "2-digit",
     });
-    dateTimeEl.textContent += "(";
-    dateTimeEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeMoscowEl.textContent += "(";
+    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "month": "long",
     });
-    dateTimeEl.textContent += ").";
-    dateTimeEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeMoscowEl.textContent += ").";
+    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
       "timeZoneName": "long",
     });
-    dateTimeEl.textContent += " (" + dateTime.toLocaleString(locale, {
+    dateTimeMoscowEl.textContent += " (" + dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
       "timeZoneName": "short",
@@ -236,7 +238,7 @@ async function initYourIP() {
 
 
 
-initDateTimeEl(locale, timeZone);
+initDateTimeMoscowEl();
 initYourIP();
 initConvertMonthEl();
 initGetAgeEl();
@@ -257,7 +259,7 @@ initFooterEl();
 
 
 //// ДОПОЛНИТЕЛЬНО:
-// ) ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI
+// ) ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI  : locale "ru-RU" , timeZone  "Europe/Moscow"
 // ) ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ : https://www.myip.com/  ,  https://www.maxmind.com/en/home  , 
 // 
 
