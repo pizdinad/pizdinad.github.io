@@ -15,14 +15,14 @@ const timeZone = "Europe/Moscow";
 const initNowDate = new Date();
 
 
-let dateTimeElement = document.getElementById("dateTimeElement");
+let dateTimeEl = document.getElementById("dateTimeEl");
 
-let selectMonthDigitElement = document.getElementById("selectMonthDigitElement");
-let selectMonthLongElement = document.getElementById("selectMonthLongElement");
+let selectMonthDigitEl = document.getElementById("selectMonthDigitEl");
+let selectMonthLongEl = document.getElementById("selectMonthLongEl");
 
-let getAgeFormElement = document.getElementById("getAgeFormElement");
-let birthdayInputElement = document.getElementById("birthdayInputElement");
-let ageElement = document.getElementById("ageElement");
+let getAgeFormEl = document.getElementById("getAgeFormEl");
+let birthdayInputEl = document.getElementById("birthdayInputEl");
+let ageEl = document.getElementById("ageEl");
 
 let endCopyEl = document.getElementById("endCopyEl");
 
@@ -79,35 +79,35 @@ function initDateTimeEl() {
   let timerId;
   function setContentDateTime() {
     let dateTime = new Date();
-    dateTimeElement.textContent = dateTime.toLocaleString(locale, {
+    dateTimeEl.textContent = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "hour": "2-digit",
       "minute": "2-digit",
       "second": "2-digit",
     });
-    dateTimeElement.textContent += " ";
-    dateTimeElement.textContent += dateTime.toLocaleString(locale, {
+    dateTimeEl.textContent += " ";
+    dateTimeEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "weekday": "long",
     });
-    dateTimeElement.textContent += " ";
-    dateTimeElement.textContent += dateTime.toLocaleString(locale, {
+    dateTimeEl.textContent += " ";
+    dateTimeEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "day": "2-digit",
       "month": "2-digit",
     });
-    dateTimeElement.textContent += "(";
-    dateTimeElement.textContent += dateTime.toLocaleString(locale, {
+    dateTimeEl.textContent += "(";
+    dateTimeEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "month": "long",
     });
-    dateTimeElement.textContent += ").";
-    dateTimeElement.textContent += dateTime.toLocaleString(locale, {
+    dateTimeEl.textContent += ").";
+    dateTimeEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
       "timeZoneName": "long",
     });
-    dateTimeElement.textContent += " (" + dateTime.toLocaleString(locale, {
+    dateTimeEl.textContent += " (" + dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
       "timeZoneName": "short",
@@ -142,13 +142,13 @@ function initDateTimeEl() {
 
 
 function initConvertMonthEl() {
-  selectMonthDigitElement.addEventListener("change", (event) => {
+  selectMonthDigitEl.addEventListener("change", (event) => {
     let selectedIndex = event.target.options.selectedIndex;
-    selectMonthLongElement.selectedIndex = selectedIndex;
+    selectMonthLongEl.selectedIndex = selectedIndex;
   });
-  selectMonthLongElement.addEventListener("change", (event) => {
+  selectMonthLongEl.addEventListener("change", (event) => {
     let selectedIndex = event.target.options.selectedIndex;
-    selectMonthDigitElement.selectedIndex = selectedIndex;
+    selectMonthDigitEl.selectedIndex = selectedIndex;
   });
 };
 
@@ -196,16 +196,16 @@ function initGetAgeEl() {
   const dateMin = "1000-01-01";
   let dateMax = getHTMLDateFormat(initNowDate);
 
-  setHTMLAttribute(birthdayInputElement, "min", dateMin);
-  setHTMLAttribute(birthdayInputElement, "max", dateMax);
+  setHTMLAttribute(birthdayInputEl, "min", dateMin);
+  setHTMLAttribute(birthdayInputEl, "max", dateMax);
 
-  getAgeFormElement.addEventListener("submit", (event) => {
+  getAgeFormEl.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const nowDate = new Date();
 
     dateMax = getHTMLDateFormat(nowDate);
-    setHTMLAttribute(birthdayInputElement, "max", dateMax);
+    setHTMLAttribute(birthdayInputEl, "max", dateMax);
 
     const data = new FormData(event.target);
 
@@ -215,7 +215,7 @@ function initGetAgeEl() {
 
     if (birthdayDate == "Invalid Date") {
       mess = "enter the correct date of birth!";
-      ageElement.textContent = mess;
+      ageEl.textContent = mess;
       return 0;
     }
 
@@ -261,11 +261,11 @@ function initGetAgeEl() {
         }
       }
 
-      ageElement.textContent = age + mess;
+      ageEl.textContent = age + mess;
 
     } else {
       mess = "enter the correct date of birth!";
-      ageElement.textContent = mess;
+      ageEl.textContent = mess;
       return 0;
     }
   });
