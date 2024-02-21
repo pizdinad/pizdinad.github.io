@@ -208,14 +208,8 @@ function initFooterEl() {
 
 
 
-//////////////////////////////////////////////////////////////
+
 async function initYourIP() {
-
-  // сделать от имени пользователя запрос на 2ip.deno.dev/api/get-ip  (получить json with ip client) !!!!!!!!!!!!!!!!!!
-
-
-
-  // console.log("initYourIP");
 
   const input = "https://2ip.deno.dev/api/get-ip";
   const init = {
@@ -226,12 +220,7 @@ async function initYourIP() {
   const { clientIP } = json;
 
 
-  // console.log("clientIP: ", clientIP); // 
-
   your_ip_el.textContent = `Your ip: ${clientIP}`;
-
-
-
 
   return Promise.resolve(1);
 }
