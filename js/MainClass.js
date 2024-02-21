@@ -44,7 +44,6 @@ const endCopyEl = document.getElementById("endCopyEl");
 
 // //// ДОПОЛНИТЕЛЬНО:
 // // ) ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI  : locale "ru-RU" , timeZone  "Europe/Moscow"
-// // ) ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ : https://www.myip.com/  ,  https://www.maxmind.com/en/home  , 
 // // 
 
 
@@ -202,7 +201,39 @@ async function initYourIP() {
   const { clientIP } = json;
 
 
+
+
+
+  
   your_ip_el.textContent = `Your ip: ${clientIP} `;
+
+
+
+
+
+
+
+
+  //////////////////////////////////////////////
+  // // ) ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ : https://www.myip.com/  ,  https://www.maxmind.com/en/home  , 
+
+
+
+
+
+
+  ///////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
 
   return Promise.resolve(1);
 }
