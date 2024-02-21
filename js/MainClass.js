@@ -34,11 +34,6 @@ const endCopyEl = document.getElementById("endCopyEl");
 
 
 
-
-
-
-
-
 function setHTMLAttribute(el, attr, val) {
   el.setAttribute(attr, val);
 }
@@ -53,27 +48,6 @@ function getDateIntl(option = {}, dateObj) {
 function getHTMLDateFormat(dateObj) {
   return getDateIntl({ "year": "numeric" }, dateObj) + "-" + getDateIntl({ "month": "2-digit" }, dateObj) + "-" + getDateIntl({ "day": "2-digit" }, dateObj);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -128,21 +102,6 @@ function initDateTimeEl() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function initConvertMonthEl() {
   selectMonthDigitEl.addEventListener("change", (event) => {
     let selectedIndex = event.target.options.selectedIndex;
@@ -153,39 +112,6 @@ function initConvertMonthEl() {
     selectMonthDigitEl.selectedIndex = selectedIndex;
   });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -276,41 +202,9 @@ function initGetAgeEl() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function initFooterEl() {
   endCopyEl.textContent = getDateIntl({ "year": "numeric" }, initNowDate);
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
