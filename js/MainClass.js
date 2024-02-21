@@ -209,13 +209,16 @@ function initFooterEl() {
 
 
 //////////////////////////////////////////////////////////////
-// function initYourIP(){
+function initYourIP() {
 
-// сделать от имени пользователя запрос на 2ip.deno.dev/api/get-ip  (получить json with ip client) !!!!!!!!!!!!!!!!!!
+  // сделать от имени пользователя запрос на 2ip.deno.dev/api/get-ip  (получить json with ip client) !!!!!!!!!!!!!!!!!!
 
 
 
-// }
+  console.log("initYourIP");
+
+
+}
 
 
 
@@ -223,6 +226,7 @@ function initFooterEl() {
 
 
 initDateTimeEl();
+initYourIP();
 initConvertMonthEl();
 initGetAgeEl();
 initFooterEl();
