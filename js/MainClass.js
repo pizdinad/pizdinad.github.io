@@ -4,10 +4,17 @@ console.log("pizdinad");
 
 
 ///////////////////////////////////////////
-console.log("locale: ", navigator.language); //// locale:  en-US    - https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language
+console.log("locale: ", navigator.language); //// locale:  en-US    - https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language   :  returns a string representing the preferred language of the user, usually the language of the browser UI.
 
-const timezone_dd = Intl.DateTimeFormat().resolvedOptions().timeZone;
-console.log(timezone_dd); // Asia/Karachi
+
+const time_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+
+const timezone_dd = time_resolvedOptions.timeZone;
+console.log(timezone_dd); // Asia/Karachi or Europe/Moscow
+
+
+console.log("time_resolvedOptions: ", time_resolvedOptions);
+
 
 ///////////////////////////////////////
 
