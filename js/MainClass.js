@@ -251,7 +251,8 @@ initFooterEl();
 
 
 ////////////////////////////////////Geolocation:
-
+// https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
+// ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
 
 
 if ("geolocation" in navigator) {
@@ -270,10 +271,11 @@ if ("geolocation" in navigator) {
   function success(pos) {
     var crd = pos.coords;
 
-    console.log("Ваше текущее местоположение:");
+    console.log("Ваше текущее местоположение:"); // !!! ОПРЕДЕЛЯЕТСЯ ПОЗИЦИЯ БРОУЗЕРА (НЕ КОНЕЧНОЙ ТОЧКИ С КОТОРОЙ ВХОДИТ НА САЙТ , НАПРИМЕР VPN)
     console.log(`Широта: ${crd.latitude}`);
     console.log(`Долгота: ${crd.longitude}`);
     console.log(`Плюс-минус ${crd.accuracy} метров.`);
+    console.log(`высота над уровнем моря: ${crd.altitude}`);
   }
 
   function error(err) {
