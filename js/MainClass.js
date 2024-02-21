@@ -3,8 +3,14 @@
 console.log("pizdinad");
 
 
+///////////////////////////////////////////
+console.log("locale: ", navigator.language); //// locale:  en-US    - https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language
 
-console.log("locale: ", navigator.language); //// locale:  en-US
+const timezone_dd = Intl.DateTimeFormat().resolvedOptions().timeZone;
+console.log(timezone_dd); // Asia/Karachi
+
+///////////////////////////////////////
+
 
 
 
