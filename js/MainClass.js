@@ -90,7 +90,7 @@ function initDateTimeEl() {
       "year": "numeric",
       "timeZoneName": "short",
     }).slice(6) + ")";
-    
+
   };
 
   function clockStart() {
@@ -241,3 +241,42 @@ initYourIP();
 initConvertMonthEl();
 initGetAgeEl();
 initFooterEl();
+
+
+
+
+
+
+
+
+
+////////////////////////////////////Geolocation:
+
+
+
+if ("geolocation" in navigator) {
+  console.log("местоположение доступно ");
+} else {
+  console.log("местоположение НЕ доступно");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////Geolocation: //
+
