@@ -93,21 +93,19 @@ function initDateTimeMoscowEl() {
 
 
 
- dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
+    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
-      // "timeZoneName": "long",
     });
 
 
 
 
 
-    // dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
-    //   "timeZone": timeZone,
-    //   "year": "numeric",
-    //   "timeZoneName": "long",
-    // });
+    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
+      "timeZone": timeZone,
+      "timeZoneName": "long",
+    });
 
 
 
