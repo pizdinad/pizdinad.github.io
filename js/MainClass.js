@@ -4,7 +4,7 @@ console.log("pizdinad");
 
 
 
-console.log("locale: ", navigator.language); /////
+console.log("locale: ", navigator.language); //// locale:  en-US
 
 
 
@@ -66,28 +66,42 @@ function initDateTimeMoscowEl() {
       "minute": "2-digit",
       "second": "2-digit",
     });
+
     dateTimeMoscowEl.textContent += " ";
+
     dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "weekday": "long",
     });
+
     dateTimeMoscowEl.textContent += " ";
+
     dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "day": "2-digit",
       "month": "2-digit",
     });
+
     dateTimeMoscowEl.textContent += "(";
+
     dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "month": "long",
     });
+
     dateTimeMoscowEl.textContent += ").";
-    dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
-      "timeZone": timeZone,
-      "year": "numeric",
-      "timeZoneName": "long",
-    });
+
+
+
+    // dateTimeMoscowEl.textContent += dateTime.toLocaleString(locale, {
+    //   "timeZone": timeZone,
+    //   "year": "numeric",
+    //   "timeZoneName": "long",
+    // });
+
+
+
+
     dateTimeMoscowEl.textContent += " (" + dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
