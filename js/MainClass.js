@@ -3,40 +3,6 @@
 console.log("pizdinad");
 
 
-///////////////////////////////////////////time_resolvedOptions :
-console.log("locale: ", navigator.language); //// locale:  en-US    - https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language   :  returns a string representing the preferred language of the user, usually the language of the browser UI.
-
-
-const time_resolvedOptions = Intl.DateTimeFormat().resolvedOptions(); // возвращает новый объект со свойствами, отражающими локаль и параметры форматирования даты и времени, вычисленные во время инициализации соответствующего объекта DateTimeFormat
-
-// const timezone_dd = time_resolvedOptions.timeZone;
-// console.log(timezone_dd); // Asia/Karachi or Europe/Moscow
-
-
-console.log("time_resolvedOptions: ", time_resolvedOptions);
-// {
-//   "locale": "en-US",
-//   "calendar": "gregory",
-//   "numberingSystem": "latn",
-//   "timeZone": "Europe/Moscow",
-//   "year": "numeric",
-//   "month": "numeric",
-//   "day": "numeric"
-// }
-
-///////////////////////////////////////time_resolvedOptions //
-
-
-
-
-let locale = "ru-RU";
-let timeZone = "Europe/Moscow";
-// date according to LOCAL TIME  (Mon Jan 09 2023 03:00:00 GMT+0300 (Moscow Standard Time)
-// Если никаких аргументов передано не было, конструктор создаёт объект Date для текущих даты и времени, согласно системным настройкам.
-// Если передано как минимум два аргумента, отсутствующие аргументы устанавливаются в стартовые значения
-const initNowDate = new Date();
-
-
 const dateTimeMoscowEl = document.getElementById("dateTimeMoscowEl");
 
 const your_ip_el = document.getElementById("your_ip_el");
@@ -56,20 +22,120 @@ const endCopyEl = document.getElementById("endCopyEl");
 
 
 
-function setHTMLAttribute(el, attr, val) {
-  el.setAttribute(attr, val);
-}
 
-function getDateIntl(option = {}, dateObj) {
-  let options = { "timeZone": timeZone };
-  Object.assign(options, option);
-  return new Intl.DateTimeFormat(locale, options).format(dateObj);
-}
 
-// "yyyy-MM-dd"
-function getHTMLDateFormat(dateObj) {
-  return getDateIntl({ "year": "numeric" }, dateObj) + "-" + getDateIntl({ "month": "2-digit" }, dateObj) + "-" + getDateIntl({ "day": "2-digit" }, dateObj);
-}
+
+
+
+
+
+
+
+
+
+
+// ///////////////////////////////////////////time_resolvedOptions :
+// console.log("locale: ", navigator.language); //// locale:  en-US    - https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language   :  returns a string representing the preferred language of the user, usually the language of the browser UI.
+
+
+// const time_resolvedOptions = Intl.DateTimeFormat().resolvedOptions(); // возвращает новый объект со свойствами, отражающими локаль и параметры форматирования даты и времени, вычисленные во время инициализации соответствующего объекта DateTimeFormat
+
+// // const timezone_dd = time_resolvedOptions.timeZone;
+// // console.log(timezone_dd); // Asia/Karachi or Europe/Moscow
+
+
+// // console.log("time_resolvedOptions: ", time_resolvedOptions);
+// // {
+// //   "locale": "en-US",
+// //   "calendar": "gregory",
+// //   "numberingSystem": "latn",
+// //   "timeZone": "Europe/Moscow",
+// //   "year": "numeric",
+// //   "month": "numeric",
+// //   "day": "numeric"
+// // }
+
+
+
+// ///////////////////////////////////////time_resolvedOptions //
+
+
+
+
+
+
+
+// ////////////////////////////////////Geolocation:
+// // https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
+// // ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
+
+
+
+// //// ДОПОЛНИТЕЛЬНО:
+// // ) ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI  : locale "ru-RU" , timeZone  "Europe/Moscow"
+// // ) ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ : https://www.myip.com/  ,  https://www.maxmind.com/en/home  , 
+// // 
+
+
+
+// if ("geolocation" in navigator) {
+//   console.log("местоположение доступно ");
+
+//   const geo = navigator.geolocation;
+
+
+
+//   var options = {
+//     enableHighAccuracy: true,
+//     timeout: 5000,
+//     maximumAge: 0,
+//   };
+
+//   function success(pos) {
+//     var crd = pos.coords;
+
+//     console.log("Ваше текущее местоположение:"); // !!! ОПРЕДЕЛЯЕТСЯ ПОЗИЦИЯ БРОУЗЕРА (НЕ КОНЕЧНОЙ ТОЧКИ С КОТОРОЙ ВХОДИТ НА САЙТ , НАПРИМЕР VPN)
+//     console.log(`Широта: ${crd.latitude} `);
+//     console.log(`Долгота: ${crd.longitude} `);
+//     console.log(`Плюс - минус ${crd.accuracy} метров.`);
+//     console.log(`высота над уровнем моря: ${crd.altitude} `);
+//   }
+
+//   function error(err) {
+//     console.warn(`ERROR(${err.code}): ${err.message} `);
+//   }
+
+//   geo.getCurrentPosition(success, error, options);
+
+
+
+
+// } else {
+//   console.log("местоположение НЕ доступно");
+// }
+
+
+
+// ////////////////////////////////////Geolocation: //
+
+
+
+
+
+
+
+
+
+
+
+let locale = "ru-RU";
+let timeZone = "Europe/Moscow";
+
+
+
+
+
+
 
 
 
@@ -160,6 +226,22 @@ function initDateTimeMoscowEl() {
 };
 
 
+async function initYourIP() {
+
+  const input = "https://2ip.deno.dev/api/get-ip";
+  const init = {
+    method: 'POST'
+  };
+  const response = await fetch(input, init);
+  const json = await response.json();
+  const { clientIP } = json;
+
+
+  your_ip_el.textContent = `Your ip: ${clientIP} `;
+
+  return Promise.resolve(1);
+}
+
 
 function initConvertMonthEl() {
   selectMonthDigitEl.addEventListener("change", (event) => {
@@ -173,8 +255,26 @@ function initConvertMonthEl() {
 };
 
 
-
 function initGetAgeEl() {
+
+  const initNowDate = new Date();
+
+  function getDateIntl(option = {}, dateObj) {
+    let options = { "timeZone": timeZone };
+    Object.assign(options, option);
+    return new Intl.DateTimeFormat(locale, options).format(dateObj); ////////////////////////////// locale , timeZone  ////////////////////// либо использовать московские статичные , либо местные !!!
+  }
+
+
+  // "yyyy-MM-dd"
+  function getHTMLDateFormat(dateObj) {
+    return getDateIntl({ "year": "numeric" }, dateObj) + "-" + getDateIntl({ "month": "2-digit" }, dateObj) + "-" + getDateIntl({ "day": "2-digit" }, dateObj);
+  }
+
+  function setHTMLAttribute(el, attr, val) {
+    el.setAttribute(attr, val);
+  }
+
 
   let age = 0;
   let mess = "";
@@ -259,35 +359,25 @@ function initGetAgeEl() {
 };
 
 
-
-
 function initFooterEl() {
+
+  // date according to LOCAL TIME  (Mon Jan 09 2023 03:00:00 GMT+0300 (Moscow Standard Time)
+  // Если никаких аргументов передано не было, конструктор создаёт объект Date для текущих даты и времени, согласно системным настройкам.
+  // Если передано как минимум два аргумента, отсутствующие аргументы устанавливаются в стартовые значения
+  const initNowDate = new Date();
+
+  const locale = "ru-RU";
+  const timeZone = "Europe/Moscow";
+
+  function getDateIntl(option = {}, dateObj) {
+    let options = { "timeZone": timeZone };
+    Object.assign(options, option);
+    return new Intl.DateTimeFormat(locale, options).format(dateObj);
+  }
+
+
   endCopyEl.textContent = getDateIntl({ "year": "numeric" }, initNowDate);
 };
-
-
-
-
-async function initYourIP() {
-
-  const input = "https://2ip.deno.dev/api/get-ip";
-  const init = {
-    method: 'POST'
-  };
-  const response = await fetch(input, init);
-  const json = await response.json();
-  const { clientIP } = json;
-
-
-  your_ip_el.textContent = `Your ip: ${clientIP} `;
-
-  return Promise.resolve(1);
-}
-
-
-
-
-
 
 
 
@@ -297,80 +387,4 @@ initConvertMonthEl();
 initGetAgeEl();
 initFooterEl();
 
-
-
-
-
-
-
-
-
-////////////////////////////////////Geolocation:
-// https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
-// ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
-
-
-
-//// ДОПОЛНИТЕЛЬНО:
-// ) ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI  : locale "ru-RU" , timeZone  "Europe/Moscow"
-// ) ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ : https://www.myip.com/  ,  https://www.maxmind.com/en/home  , 
-// 
-
-
-
-if ("geolocation" in navigator) {
-  console.log("местоположение доступно ");
-
-  const geo = navigator.geolocation;
-
-
-
-  var options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0,
-  };
-
-  function success(pos) {
-    var crd = pos.coords;
-
-    console.log("Ваше текущее местоположение:"); // !!! ОПРЕДЕЛЯЕТСЯ ПОЗИЦИЯ БРОУЗЕРА (НЕ КОНЕЧНОЙ ТОЧКИ С КОТОРОЙ ВХОДИТ НА САЙТ , НАПРИМЕР VPN)
-    console.log(`Широта: ${crd.latitude} `);
-    console.log(`Долгота: ${crd.longitude} `);
-    console.log(`Плюс - минус ${crd.accuracy} метров.`);
-    console.log(`высота над уровнем моря: ${crd.altitude} `);
-  }
-
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message} `);
-  }
-
-  geo.getCurrentPosition(success, error, options);
-
-
-
-
-} else {
-  console.log("местоположение НЕ доступно");
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////Geolocation: //
 
