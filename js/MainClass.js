@@ -7,8 +7,8 @@ console.log("pizdinad!");
 
 
 
-const locale = "ru-RU";
-const timeZone = "Europe/Moscow";
+let locale = "ru-RU";
+let timeZone = "Europe/Moscow";
 // date according to LOCAL TIME  (Mon Jan 09 2023 03:00:00 GMT+0300 (Moscow Standard Time)
 // Если никаких аргументов передано не было, конструктор создаёт объект Date для текущих даты и времени, согласно системным настройкам.
 // Если передано как минимум два аргумента, отсутствующие аргументы устанавливаются в стартовые значения
@@ -51,7 +51,7 @@ function getHTMLDateFormat(dateObj) {
 
 
 
-function initDateTimeEl() {
+function initDateTimeEl(locale, timeZone) {
   let timerId;
 
   function setContentDateTime() {
@@ -236,7 +236,7 @@ async function initYourIP() {
 
 
 
-initDateTimeEl();
+initDateTimeEl(locale, timeZone);
 initYourIP();
 initConvertMonthEl();
 initGetAgeEl();
@@ -253,6 +253,14 @@ initFooterEl();
 ////////////////////////////////////Geolocation:
 // https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
 // ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
+
+
+
+//// ДОПОЛНИТЕЛЬНО:
+// ) ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI
+// ) ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ : https://www.myip.com/  ,  https://www.maxmind.com/en/home  , 
+// 
+
 
 
 if ("geolocation" in navigator) {
