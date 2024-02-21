@@ -53,8 +53,10 @@ function getHTMLDateFormat(dateObj) {
 
 function initDateTimeEl() {
   let timerId;
+
   function setContentDateTime() {
     let dateTime = new Date();
+
     dateTimeEl.textContent = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "hour": "2-digit",
@@ -88,7 +90,9 @@ function initDateTimeEl() {
       "year": "numeric",
       "timeZoneName": "short",
     }).slice(6) + ")";
+    
   };
+
   function clockStart() {
     timerId = setInterval(setContentDateTime, 1000);
     setContentDateTime();
