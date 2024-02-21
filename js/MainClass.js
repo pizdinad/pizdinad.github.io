@@ -132,7 +132,7 @@ function initDateTimeMoscowEl() {
 
 
 
-    dateTimeMoscowEl.textContent = `
+    dateTimeMoscowEl.innerHTML = `
     <div>${timeZoneName}</div>
     <div>${dateTimeStr}</div>
   `;
