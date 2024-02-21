@@ -34,35 +34,6 @@ const endCopyEl = document.getElementById("endCopyEl");
 
 
 
-// ///////////////////////////////////////////time_resolvedOptions :
-// console.log("locale: ", navigator.language); //// locale:  en-US    - https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language   :  returns a string representing the preferred language of the user, usually the language of the browser UI.
-
-
-// const time_resolvedOptions = Intl.DateTimeFormat().resolvedOptions(); // возвращает новый объект со свойствами, отражающими локаль и параметры форматирования даты и времени, вычисленные во время инициализации соответствующего объекта DateTimeFormat
-
-// // const timezone_dd = time_resolvedOptions.timeZone;
-// // console.log(timezone_dd); // Asia/Karachi or Europe/Moscow
-
-
-// // console.log("time_resolvedOptions: ", time_resolvedOptions);
-// // {
-// //   "locale": "en-US",
-// //   "calendar": "gregory",
-// //   "numberingSystem": "latn",
-// //   "timeZone": "Europe/Moscow",
-// //   "year": "numeric",
-// //   "month": "numeric",
-// //   "day": "numeric"
-// // }
-
-
-
-// ///////////////////////////////////////time_resolvedOptions //
-
-
-
-
-
 
 
 // ////////////////////////////////////Geolocation:
@@ -124,12 +95,6 @@ const endCopyEl = document.getElementById("endCopyEl");
 
 
 
-
-
-
-
-let locale = "ru-RU";
-let timeZone = "Europe/Moscow";
 
 
 
@@ -257,12 +222,30 @@ function initConvertMonthEl() {
 
 function initGetAgeEl() {
 
+  const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+  // ex:
+  // {
+  //   "locale": "en-US", // "ru-RU"
+  //   "calendar": "gregory",
+  //   "numberingSystem": "latn",
+  //   "timeZone": "Europe/Moscow", // Asia/Karachi
+  //   "year": "numeric",
+  //   "month": "numeric",
+  //   "day": "numeric"
+  // }
+
+
+  const locale = time_format_resolvedOptions.locale;
+  const timeZone = time_format_resolvedOptions.timeZone;
+
+
+
   const initNowDate = new Date();
 
   function getDateIntl(option = {}, dateObj) {
     let options = { "timeZone": timeZone };
     Object.assign(options, option);
-    return new Intl.DateTimeFormat(locale, options).format(dateObj); ////////////////////////////// locale , timeZone  ////////////////////// либо использовать московские статичные , либо местные !!!
+    return new Intl.DateTimeFormat(locale, options).format(dateObj);
   }
 
 
