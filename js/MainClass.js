@@ -4,6 +4,7 @@ console.log("pizdinad");
 
 
 
+console.log("locale: ", navigator.language); /////
 
 
 
