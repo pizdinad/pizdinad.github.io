@@ -226,9 +226,9 @@ async function initYourIP() {
   const { clientIP } = json;
 
 
-  console.log("clientIP: ", clientIP); // 
+  // console.log("clientIP: ", clientIP); // 
 
-  // your_ip_el.textContent = `Your ip: ${clientIP}`;
+  your_ip_el.textContent = `Your ip: ${clientIP}`;
 
 
 
@@ -238,7 +238,7 @@ async function initYourIP() {
 
 
 
-your_ip_el.textContent = `Your ip: ${clientIP}`;
+
 
 
 
