@@ -1,7 +1,7 @@
 .wrapEl {
   position: relative;
   display: grid;
-  row-gap: 50px;
+  row-gap: 40px;
   z-index: 1;
   overflow-x: auto;
   overflow-y: auto;
