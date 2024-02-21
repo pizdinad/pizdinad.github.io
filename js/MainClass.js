@@ -3,20 +3,28 @@
 console.log("pizdinad");
 
 
-///////////////////////////////////////////
+///////////////////////////////////////////time_resolvedOptions :
 console.log("locale: ", navigator.language); //// locale:  en-US    - https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language   :  returns a string representing the preferred language of the user, usually the language of the browser UI.
 
 
-const time_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+const time_resolvedOptions = Intl.DateTimeFormat().resolvedOptions(); // возвращает новый объект со свойствами, отражающими локаль и параметры форматирования даты и времени, вычисленные во время инициализации соответствующего объекта DateTimeFormat
 
-const timezone_dd = time_resolvedOptions.timeZone;
-console.log(timezone_dd); // Asia/Karachi or Europe/Moscow
+// const timezone_dd = time_resolvedOptions.timeZone;
+// console.log(timezone_dd); // Asia/Karachi or Europe/Moscow
 
 
 console.log("time_resolvedOptions: ", time_resolvedOptions);
+// {
+//   "locale": "en-US",
+//   "calendar": "gregory",
+//   "numberingSystem": "latn",
+//   "timeZone": "Europe/Moscow",
+//   "year": "numeric",
+//   "month": "numeric",
+//   "day": "numeric"
+// }
 
-
-///////////////////////////////////////
+///////////////////////////////////////time_resolvedOptions //
 
 
 
