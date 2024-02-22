@@ -218,9 +218,15 @@ function initDateTimeMoscowEl() {
 
 async function initYourIP() {
 
+  /////////////////////// headers cors ... ////////////////////////
+
   const input = "https://2ip.deno.dev/api/get-ip";
   const init = {
-    method: 'POST'
+    method: 'POST',
+    headers: {
+      // 'Content-Type': 'application/json'
+      'Origin': 'https://pizdinad.ru'
+    },
   };
   const response = await fetch(input, init);
   const json = await response.json();
