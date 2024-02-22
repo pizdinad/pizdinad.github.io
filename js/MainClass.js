@@ -227,7 +227,8 @@ async function initYourIP() {
   }
 
   your_ip_el.innerHTML = `
-  <span class='fw-bold'>Your ip:</span> ${clientIP} ${geo_str}
+  <div class='fw-bold'>Your ip:</div>
+  <div>${clientIP} ${geo_str}</div>
   `;
 
   return Promise.resolve(1);
