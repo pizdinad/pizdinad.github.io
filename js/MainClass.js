@@ -219,11 +219,12 @@ function initDateTimeMoscowEl() {
 async function initYourIP() {
 
   /////////////////////// headers cors ... ////////////////////////
-  console.log("not fake");
+  console.log("GET");
 
   const input = "https://2ip.deno.dev/api/get-ip";
   const init = {
-    method: 'POST',
+    // method: 'POST',
+    method: 'GET',
     headers: {
       // 'Content-Type': 'application/json'
       // 'Origin': 'https://pizdinad.ru' // not fake
