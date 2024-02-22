@@ -136,7 +136,7 @@ function initDateTimeMoscowEl() {
 
 
   
-    timeZoneNameShort += " (" + dateTime.toLocaleString(locale, {
+    timeZoneNameShort = "(" + dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
       "timeZoneName": "short",
@@ -226,7 +226,9 @@ async function initYourIP() {
 
   }
 
-  your_ip_el.innerHTML = `<span class='fw-bold'>Your ip:</span> ${clientIP} ${geo_str}`;
+  your_ip_el.innerHTML = `
+  <span class='fw-bold'>Your ip:</span> ${clientIP} ${geo_str}
+  `;
 
   return Promise.resolve(1);
 }
