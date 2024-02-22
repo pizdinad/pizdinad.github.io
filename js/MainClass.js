@@ -44,7 +44,8 @@ const endCopyEl = document.getElementById("endCopyEl");
 
 // //// ДОПОЛНИТЕЛЬНО:
 // // ) ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI  : locale "ru-RU" , timeZone  "Europe/Moscow"
-// // 
+// // ) time based on IP location
+/////) browser-based time
 
 
 
@@ -89,10 +90,22 @@ const endCopyEl = document.getElementById("endCopyEl");
 // ////////////////////////////////////Geolocation: //
 
 
+const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+console.log(time_format_resolvedOptions);
+// ex:
+// {
+//   "locale": "en-US", // "ru-RU"
+//   "calendar": "gregory",
+//   "numberingSystem": "latn",
+//   "timeZone": "Europe/Moscow", // Asia/Karachi
+//   "year": "numeric",
+//   "month": "numeric",
+//   "day": "numeric"
+// }
 
 
 
-
+//////////////////////////////////////////////////////////////
 
 
 
