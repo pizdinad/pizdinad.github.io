@@ -225,7 +225,7 @@ async function initYourIP() {
     method: 'POST',
     headers: {
       // 'Content-Type': 'application/json'
-      'Origin': 'https://pizdinad.ru'
+      // 'Origin': 'https://pizdinad.ru' // not fake
     },
   };
   const response = await fetch(input, init);
