@@ -198,13 +198,8 @@ async function initYourIP() {
   };
   const response = await fetch(input, init);
   const json = await response.json();
-  const { clientIP, geo } = json; // ex: geo:  {"status":"fail"} || {"status":"success","country":"Russia","city":"Moscow"}
+  const { clientIP, geo } = json; // ex: geo:  {"status":"fail"} || {status: 'success', country: 'The Netherlands', city: 'Amsterdam', query: '146.0.78.177'}
   let geo_str = ``;
-
-  //////////////////////////////////////////////
-  //  ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ   !!!!!
-
-  console.log("geo:", geo); // {status: 'success', country: 'Russia', city: 'Moscow', query: '79.139.145.9'}
 
   if (geo.status === 'success') {
 
@@ -215,9 +210,6 @@ async function initYourIP() {
   }
 
   your_ip_el.innerHTML = `<span class='fw-bold'>Your ip:</span> ${clientIP} ${geo_str}`;
-
-  ///////////////////////////////////////////////
-
 
   return Promise.resolve(1);
 }
