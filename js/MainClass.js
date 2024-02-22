@@ -204,20 +204,17 @@ async function initYourIP() {
   //////////////////////////////////////////////
   //  ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ   !!!!!
 
-  // console.log("geo:", geo);
+  console.log("geo:", geo); // {status: 'success', country: 'Russia', city: 'Moscow', query: '79.139.145.9'}
 
-  // your_ip_el.textContent = `Your ip: ${clientIP} `;
+  if (geo.status === 'success') {
 
+    const { country, city } = geo;
 
+    geo_str += `(${country}, ${city})`;
 
+  }
 
-
-
-
-
-  your_ip_el.innerHTML = `
-  <span class='fw-bold'>Your ip:</span> ${clientIP} ${geo_str}
-  `;
+  your_ip_el.innerHTML = `<span class='fw-bold'>Your ip:</span> ${clientIP} ${geo_str}`;
 
   ///////////////////////////////////////////////
 
