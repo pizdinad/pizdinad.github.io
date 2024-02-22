@@ -42,10 +42,10 @@ const endCopyEl = document.getElementById("endCopyEl");
 
 
 
-// //// ДОПОЛНИТЕЛЬНО:
-// // ) ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI  : locale "ru-RU" , timeZone  "Europe/Moscow"
+// //// ДОПОЛНИТЕЛЬНО (OTHER timeZone):
+// // )                                             ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI
 // // ) time based on IP location
-/////) browser-based time
+///// ) local time (device)
 
 
 
@@ -124,16 +124,19 @@ function initDateTimeMoscowEl() {
   function setContentDateTime() {
 
     let dateTime = new Date();
-    let timeZoneName, dateTimeStr = ``;
+    let timeZoneNameLong, timeZoneNameShort, dateTimeStr = ``;
 
 
-    timeZoneName = dateTime.toLocaleString(locale, {
+    timeZoneNameLong = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
       "timeZoneName": "long",
     }).slice(6);
 
-    timeZoneName += " (" + dateTime.toLocaleString(locale, {
+
+
+  
+    timeZoneNameShort += " (" + dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
       "timeZoneName": "short",
@@ -184,7 +187,8 @@ function initDateTimeMoscowEl() {
 
 
     dateTimeMoscowEl.innerHTML = `
-    <div>${timeZoneName}</div>
+    <div class='fw-bold'>${timeZoneNameLong}</div>
+    <div>${timeZoneNameShort}</div>
     <div>${dateTimeStr}</div>
   `;
 
