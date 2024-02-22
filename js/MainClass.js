@@ -198,13 +198,13 @@ async function initYourIP() {
   };
   const response = await fetch(input, init);
   const json = await response.json();
-  const { clientIP } = json;
+  const { clientIP, geo } = json; // ex: geo:  {"status":"fail"} || {"status":"success","country":"Russia","city":"Moscow"}
 
 
 
 
 
-  
+
   your_ip_el.textContent = `Your ip: ${clientIP} `;
 
 
@@ -217,7 +217,7 @@ async function initYourIP() {
   //////////////////////////////////////////////
   //  ЛОКАЦИЮ АЙПИ ПРИШЕДШЕГО НА САЙТ   !!!!!
 
-
+  console.log("geo:", geo);
 
 
 
