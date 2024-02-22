@@ -124,18 +124,21 @@ function initDateTimeMoscowEl() {
   function setContentDateTime() {
 
     let dateTime = new Date();
-    let timeZoneNameLong, timeZoneNameShort, dateTimeStr = ``;
+    let timeZoneNameLong,
+      timeZoneNameShort,
+      dateTimeStr1,
+      dateTimeStr2 = ``;
 
 
     timeZoneNameLong = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
       "timeZoneName": "long",
-    }).slice(6);
+    }).slice(6) + ":";
 
 
 
-  
+
     timeZoneNameShort = "(" + dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
@@ -145,40 +148,45 @@ function initDateTimeMoscowEl() {
 
 
 
-    dateTimeStr = dateTime.toLocaleString(locale, {
+    dateTimeStr1 = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "hour": "2-digit",
       "minute": "2-digit",
       "second": "2-digit",
     });
 
-    dateTimeStr += " ";
+    dateTimeStr1 += " ";
 
-    dateTimeStr += dateTime.toLocaleString(locale, {
+    dateTimeStr1 += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "weekday": "long",
     });
 
-    dateTimeStr += " ";
 
-    dateTimeStr += dateTime.toLocaleString(locale, {
+
+
+
+
+
+
+    dateTimeStr2 = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "day": "2-digit",
       "month": "2-digit",
     });
 
-    dateTimeStr += "(";
+    dateTimeStr2 += "(";
 
-    dateTimeStr += dateTime.toLocaleString(locale, {
+    dateTimeStr2 += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "month": "long",
     });
 
-    dateTimeStr += ").";
+    dateTimeStr2 += ").";
 
 
 
-    dateTimeStr += dateTime.toLocaleString(locale, {
+    dateTimeStr2 += dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
     });
@@ -189,7 +197,8 @@ function initDateTimeMoscowEl() {
     dateTimeMoscowEl.innerHTML = `
     <div class='fw-bold'>${timeZoneNameLong}</div>
     <div>${timeZoneNameShort}</div>
-    <div>${dateTimeStr}</div>
+    <div>${dateTimeStr1}</div>
+    <div>${dateTimeStr2}</div>
   `;
 
 
