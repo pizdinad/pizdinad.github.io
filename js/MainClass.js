@@ -123,7 +123,8 @@ function initDateTimeMoscowEl() {
 
 
 function initLocalTimeEl() {
-  // Local time (device):
+
+  const label = 'Local time (device):';
   const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
   // ex:
   // {
@@ -144,10 +145,7 @@ function initLocalTimeEl() {
   function setContentDateTime() {
 
     let dateTime = new Date();
-    let timeZoneNameLong,
-      timeZoneNameShort,
-      dateTimeStr1,
-      dateTimeStr2 = ``;
+    let timeZoneNameLong = ``;
 
 
 
@@ -164,11 +162,9 @@ function initLocalTimeEl() {
 
 
 
-      localTimeEl.innerHTML = `
-      <div class='fw-bold'>Local time (device):</div>
-      <div>${timeZoneNameShort}</div>
-      <div>${dateTimeStr1}</div>
-      <div>${dateTimeStr2}</div>
+    localTimeEl.innerHTML = `
+      <div class='fw-bold'>${label}</div>
+      <div>${timeZoneNameLong}</div>
     `;
 
   };
