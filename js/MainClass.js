@@ -146,14 +146,20 @@ function initLocalTimeEl() {
 
   function setContentDateTime() {
 
+    // Intl.DateTimeFormat - предоставляет возможности форматирования даты и времени в соответствии с языковыми правилами.
+    // the default locale, and the default time zone - without arguments
+
+
+
+
+
 
 
 
     /////////////////////////////////////////////////////
-    // Intl.DateTimeFormat - предоставляет возможности форматирования даты и времени в соответствии с языковыми правилами.
-    // the default locale, and the default time zone
 
 
+    console.log(new Intl.DateTimeFormat().format(Date.now())); // 
 
 
     // let _str = ``;
