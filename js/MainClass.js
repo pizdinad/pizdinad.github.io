@@ -218,14 +218,13 @@ function initDateTimeMoscowEl() {
 
 async function initYourIP() {
 
-  /////////////////////// headers cors ... ////////////////////////
-
   const input = "https://2ip.deno.dev/api/get-ip";
+  // с точки зрения CORS - это простой запрос:
   const init = {
     method: 'POST',
-    headers: {
-      // 'Content-Type': 'application/json'
-    },
+    // headers: {
+    //   'Content-Type': 'application/json'
+    // },
   };
   const response = await fetch(input, init);
   const json = await response.json();
