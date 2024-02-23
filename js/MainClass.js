@@ -145,11 +145,15 @@ function initLocalTimeEl() {
   function setContentDateTime() {
 
     let dateTime = new Date();
-    let timeZoneNameLong = ``;
 
 
 
 
+    let _str = ``;
+
+
+
+    console.log("date.now: ", dateTime.now());
 
 
 
@@ -164,7 +168,7 @@ function initLocalTimeEl() {
 
     localTimeEl.innerHTML = `
       <div class='fw-bold'>${label}</div>
-      <div>${timeZoneNameLong}</div>
+      <div>${_str}</div>
     `;
 
   };
