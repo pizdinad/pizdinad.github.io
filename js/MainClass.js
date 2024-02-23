@@ -379,13 +379,14 @@ initFooterEl();
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // //// ДОПОЛНИТЕЛЬНО (OTHER timeZone):
-// // ) time based on provider location
-// // ) time based on IP location
+// // ) time based on provider location   (navigator coords)
+// // ) time based on IP location         (geoIP city)
 
 
 
 
 // ////////////////////////////////////Geolocation:
+//  // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
 // // https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
 // // ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
 
