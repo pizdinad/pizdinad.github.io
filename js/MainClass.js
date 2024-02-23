@@ -148,6 +148,9 @@ function initLocalTimeEl() {
     // console.log(new Intl.DateTimeFormat().format(Date.now())); // 2/23/2024  - if all component properties are undefined, then year, month, and day default to "numeric".
     // can be called with or without new
     // If any of the date-time component options is specified, then dateStyle and timeStyle must be undefined.
+    // Для указания настроек, но использования локали по умолчанию, нужно передать undefined
+
+
 
 
 
@@ -172,11 +175,11 @@ function initLocalTimeEl() {
     // The time formatting style to use when calling format(). Possible values are "full", "long", "medium", and "short".
 
 
-    const mediumTime = new Intl.DateTimeFormat("en", {
+    const mediumTime = new Intl.DateTimeFormat(undefined, {
       timeStyle: "medium",
       dateStyle: "short",
     });
-    console.log(mediumTime.format(Date.now())); // ru: 22.02.2024, 21:12:55  ,   en: 
+    console.log(mediumTime.format(Date.now())); // ru: 22.02.2024, 21:12:55  ,  en: 2/22/24, 9:15:35 PM  , undefined: 
 
     ///////////////////////////////////////////////////////
 
