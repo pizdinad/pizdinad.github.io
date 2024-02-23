@@ -127,21 +127,18 @@ function initDateTimeMoscowEl() {
 function initLocalTimeEl() {
 
   const label = 'Local time (device):';
-  const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
-  // ex:
-  // {
-  //   "locale": "en-US", // "ru-RU"
-  //   "calendar": "gregory",
-  //   "numberingSystem": "latn",
-  //   "timeZone": "Europe/Moscow", // Asia/Karachi
-  //   "year": "numeric",
-  //   "month": "numeric",
-  //   "day": "numeric"
-  // }
 
 
-  const locale = time_format_resolvedOptions.locale;
-  const timeZone = time_format_resolvedOptions.timeZone;
+
+
+  // //////////////// возможно не понадобится :
+  // const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+  // const locale = time_format_resolvedOptions.locale;
+  // const timeZone = time_format_resolvedOptions.timeZone;
+  // //////////////// возможно не понадобится //
+
+
+
   let timerId;
 
   function setContentDateTime() {
@@ -157,19 +154,18 @@ function initLocalTimeEl() {
 
 
     /////////////////////////////////////////////////////
+      // let _str = ``;
 
-
-    console.log(new Intl.DateTimeFormat().format(Date.now())); // 
-
-
-    // let _str = ``;
-
-
-
-    // console.log("date.now: ", dateTime.now());
-
-
+      
     // console.log(Date.now()); // 1708677324631 , 1708677324631 ...
+
+
+    // console.log(new Intl.DateTimeFormat().format(Date.now())); // 2/23/2024
+
+
+  
+
+
 
 
     ///////////////////////////////////////////////////////
