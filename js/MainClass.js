@@ -5,6 +5,8 @@ console.log("pizdinad");
 
 const dateTimeMoscowEl = document.getElementById("dateTimeMoscowEl");
 
+const localTimeEl = document.getElementById("localTimeEl");
+
 const your_ip_el = document.getElementById("your_ip_el");
 
 const selectMonthDigitEl = document.getElementById("selectMonthDigitEl");
@@ -15,86 +17,6 @@ const birthdayInputEl = document.getElementById("birthdayInputEl");
 const ageEl = document.getElementById("ageEl");
 
 const endCopyEl = document.getElementById("endCopyEl");
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-// //// ДОПОЛНИТЕЛЬНО (OTHER timeZone):
-// // ) time based on provider location                                           
-// // ) time based on IP location
-///// ) local time (device)
-
-
-
-//////////////////////////////////////////////////////////////time_format_resolvedOptions - local time (device) :
-const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
-console.log("local time (device) :", time_format_resolvedOptions);
-// ex:
-// {
-//   "locale": "en-US", // "ru-RU"
-//   "calendar": "gregory",
-//   "numberingSystem": "latn",
-//   "timeZone": "Europe/Moscow", // Asia/Karachi
-//   "year": "numeric",
-//   "month": "numeric",
-//   "day": "numeric"
-// }
-
-
-
-//////////////////////////////////////////////////////////////time_format_resolvedOptions: //
-
-
-
-
-// ////////////////////////////////////Geolocation:
-// // https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
-// // ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
-
-
-// if ("geolocation" in navigator) {
-//   console.log("местоположение доступно ");
-
-//   const geo = navigator.geolocation;
-
-
-
-//   var options = {
-//     enableHighAccuracy: true,
-//     timeout: 5000,
-//     maximumAge: 0,
-//   };
-
-//   function success(pos) {
-//     var crd = pos.coords;
-
-//     console.log("Ваше текущее местоположение:"); // !!! ОПРЕДЕЛЯЕТСЯ ПОЗИЦИЯ БРОУЗЕРА (НЕ КОНЕЧНОЙ ТОЧКИ С КОТОРОЙ ВХОДИТ НА САЙТ , НАПРИМЕР VPN)
-//     console.log(`Широта: ${crd.latitude} `);
-//     console.log(`Долгота: ${crd.longitude} `);
-//     console.log(`Плюс - минус ${crd.accuracy} метров.`);
-//     console.log(`высота над уровнем моря: ${crd.altitude} `);
-//   }
-
-//   function error(err) {
-//     console.warn(`ERROR(${err.code}): ${err.message} `);
-//   }
-
-//   geo.getCurrentPosition(success, error, options);
-
-
-
-
-// } else {
-//   console.log("местоположение НЕ доступно");
-// }
-
-// ////////////////////////////////////Geolocation: //
-
-
-
-
-
 
 
 
@@ -199,6 +121,57 @@ function initDateTimeMoscowEl() {
   };
   clockStart();
 };
+
+
+
+
+//////////////////////////////////////////////////////////////time_format_resolvedOptions - local time (device) :
+const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+console.log("local time (device) :", time_format_resolvedOptions);
+// ex:
+// {
+//   "locale": "en-US", // "ru-RU"
+//   "calendar": "gregory",
+//   "numberingSystem": "latn",
+//   "timeZone": "Europe/Moscow", // Asia/Karachi
+//   "year": "numeric",
+//   "month": "numeric",
+//   "day": "numeric"
+// }
+
+
+
+function initLocalTimeEl() {
+  // Local time (device):
+
+
+
+
+
+
+
+
+
+
+
+
+
+  localTimeEl.innerHTML = `
+  Local time (device):
+ `;
+
+};
+
+
+
+
+
+//////////////////////////////////////////////////////////////time_format_resolvedOptions: //
+
+
+
+
+
 
 
 async function initYourIP() {
@@ -395,4 +368,63 @@ initConvertMonthEl();
 initGetAgeEl();
 initFooterEl();
 
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// //// ДОПОЛНИТЕЛЬНО (OTHER timeZone):
+// // ) time based on provider location
+// // ) time based on IP location
+
+
+
+
+// ////////////////////////////////////Geolocation:
+// // https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
+// // ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
+
+
+// if ("geolocation" in navigator) {
+//   console.log("местоположение доступно ");
+
+//   const geo = navigator.geolocation;
+
+
+
+//   var options = {
+//     enableHighAccuracy: true,
+//     timeout: 5000,
+//     maximumAge: 0,
+//   };
+
+//   function success(pos) {
+//     var crd = pos.coords;
+
+//     console.log("Ваше текущее местоположение:"); // !!! ОПРЕДЕЛЯЕТСЯ ПОЗИЦИЯ БРОУЗЕРА (НЕ КОНЕЧНОЙ ТОЧКИ С КОТОРОЙ ВХОДИТ НА САЙТ , НАПРИМЕР VPN)
+//     console.log(`Широта: ${crd.latitude} `);
+//     console.log(`Долгота: ${crd.longitude} `);
+//     console.log(`Плюс - минус ${crd.accuracy} метров.`);
+//     console.log(`высота над уровнем моря: ${crd.altitude} `);
+//   }
+
+//   function error(err) {
+//     console.warn(`ERROR(${err.code}): ${err.message} `);
+//   }
+
+//   geo.getCurrentPosition(success, error, options);
+
+
+
+
+// } else {
+//   console.log("местоположение НЕ доступно");
+// }
+
+// ////////////////////////////////////Geolocation: //
 
