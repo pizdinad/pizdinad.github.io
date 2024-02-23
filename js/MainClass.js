@@ -37,6 +37,8 @@ function initDateTimeMoscowEl() {
       dateTimeStr2 = ``;
 
 
+    // В реализациях, поддерживающих Intl.DateTimeFormat API, этот метод(toLocaleString) просто вызывает Intl.DateTimeFormat
+    // toLocaleString without arguments : the default locale, and the default time zone
     timeZoneNameLong = dateTime.toLocaleString(locale, {
       "timeZone": timeZone,
       "year": "numeric",
@@ -148,8 +150,8 @@ function initLocalTimeEl() {
 
 
     /////////////////////////////////////////////////////
-
-    // let dateTime = new Date();
+    // Intl.DateTimeFormat - предоставляет возможности форматирования даты и времени в соответствии с языковыми правилами.
+    // the default locale, and the default time zone
 
 
 
@@ -161,7 +163,7 @@ function initLocalTimeEl() {
     // console.log("date.now: ", dateTime.now());
 
 
-    console.log(Date.now()); //
+    // console.log(Date.now()); // 1708677324631 , 1708677324631 ...
 
 
     ///////////////////////////////////////////////////////
