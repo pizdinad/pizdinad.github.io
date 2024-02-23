@@ -126,19 +126,6 @@ function initDateTimeMoscowEl() {
 
 function initLocalTimeEl() {
 
-  const label = 'Local time (device):';
-
-
-
-
-  // //////////////// возможно не понадобится :
-  // const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
-  // const locale = time_format_resolvedOptions.locale;
-  // const timeZone = time_format_resolvedOptions.timeZone;
-  // //////////////// возможно не понадобится //
-
-
-
   let timerId;
 
   function setContentDateTime() {
@@ -149,55 +136,23 @@ function initLocalTimeEl() {
     // can be called with or without new
     // If any of the date-time component options is specified, then dateStyle and timeStyle must be undefined.
     // Для указания настроек, но использования локали по умолчанию, нужно передать undefined
+    // ru: 22.02.2024, 21:12:55  ,  en: 2/22/24, 9:15:35 PM  , undefined: 2/22/24, 9:50:21 PM
 
 
+    const label = 'Local time (device):';
+    const str_dateTime = Intl.DateTimeFormat(
+      undefined,
+      {
+        timeStyle: "medium",
+        dateStyle: "short",
+      }
+    ).format(Date.now());
 
 
-
-
-
-    /////////////////////////////////////////////////////
-    // let _str = ``;
-
-
-
-    // console.log(new Intl.DateTimeFormat().format(Date.now()));
-
-    // console.log(Intl.DateTimeFormat().format(Date.now()));
-
-
-
-
-    // dateStyle
-    // The date formatting style to use when calling format(). Possible values are "full", "long", "medium", and "short".
-
-    // timeStyle
-    // The time formatting style to use when calling format(). Possible values are "full", "long", "medium", and "short".
-
-
-    const mediumTime = new Intl.DateTimeFormat(undefined, {
-      timeStyle: "medium",
-      dateStyle: "short",
-    });
-    console.log(mediumTime.format(Date.now())); // ru: 22.02.2024, 21:12:55  ,  en: 2/22/24, 9:15:35 PM  , undefined: 
-
-    ///////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-    // localTimeEl.innerHTML = `
-    //   <div class='fw-bold'>${label}</div>
-    //   <div>${_str}</div>
-    // `;
+    localTimeEl.innerHTML = `
+      <div class='fw-bold'>${label}</div>
+      <div>${str_dateTime}</div>
+    `;
 
   };
 
@@ -210,6 +165,7 @@ function initLocalTimeEl() {
     timerId = null;
   };
   clockStart();
+
 };
 
 
