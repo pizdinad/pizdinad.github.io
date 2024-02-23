@@ -19,19 +19,31 @@ const endCopyEl = document.getElementById("endCopyEl");
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// //// ДОПОЛНИТЕЛЬНО (OTHER timeZone):
+// // ) time based on provider location                                           
+// // ) time based on IP location
+///// ) local time (device)
 
 
 
+//////////////////////////////////////////////////////////////time_format_resolvedOptions - local time (device) :
+const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+console.log("local time (device) :", time_format_resolvedOptions);
+// ex:
+// {
+//   "locale": "en-US", // "ru-RU"
+//   "calendar": "gregory",
+//   "numberingSystem": "latn",
+//   "timeZone": "Europe/Moscow", // Asia/Karachi
+//   "year": "numeric",
+//   "month": "numeric",
+//   "day": "numeric"
+// }
 
 
 
-
-
-
-
-
-
-
+//////////////////////////////////////////////////////////////time_format_resolvedOptions: //
 
 
 
@@ -39,14 +51,6 @@ const endCopyEl = document.getElementById("endCopyEl");
 // ////////////////////////////////////Geolocation:
 // // https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
 // // ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
-
-
-
-// //// ДОПОЛНИТЕЛЬНО (OTHER timeZone):
-// // )                                             ВРЕМЯ ПОКАЗЫВАТЬ НА ОСНОВЕ ПОЗИЦИИ WIFI
-// // ) time based on IP location
-///// ) local time (device)
-
 
 
 // if ("geolocation" in navigator) {
@@ -85,27 +89,8 @@ const endCopyEl = document.getElementById("endCopyEl");
 //   console.log("местоположение НЕ доступно");
 // }
 
-
-
 // ////////////////////////////////////Geolocation: //
 
-
-const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
-console.log(time_format_resolvedOptions);
-// ex:
-// {
-//   "locale": "en-US", // "ru-RU"
-//   "calendar": "gregory",
-//   "numberingSystem": "latn",
-//   "timeZone": "Europe/Moscow", // Asia/Karachi
-//   "year": "numeric",
-//   "month": "numeric",
-//   "day": "numeric"
-// }
-
-
-
-//////////////////////////////////////////////////////////////
 
 
 
