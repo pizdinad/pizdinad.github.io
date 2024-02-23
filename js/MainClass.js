@@ -144,12 +144,17 @@ function initLocalTimeEl() {
 
   function setContentDateTime() {
 
-    let dateTime = new Date();
+
+
+
+    /////////////////////////////////////////////////////
+
+    // let dateTime = new Date();
 
 
 
 
-    let _str = ``;
+    // let _str = ``;
 
 
 
@@ -159,6 +164,7 @@ function initLocalTimeEl() {
 
 
 
+    ///////////////////////////////////////////////////////
 
 
 
@@ -166,10 +172,15 @@ function initLocalTimeEl() {
 
 
 
-    localTimeEl.innerHTML = `
-      <div class='fw-bold'>${label}</div>
-      <div>${_str}</div>
-    `;
+
+
+
+
+
+    // localTimeEl.innerHTML = `
+    //   <div class='fw-bold'>${label}</div>
+    //   <div>${_str}</div>
+    // `;
 
   };
 
