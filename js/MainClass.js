@@ -153,7 +153,7 @@ function initLocalTimeEl() {
 
 
 
-    console.log("date.now: ", dateTime.now());
+    // console.log("date.now: ", dateTime.now());
 
 
 
