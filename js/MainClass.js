@@ -142,30 +142,37 @@ function initLocalTimeEl() {
   let timerId;
 
   function setContentDateTime() {
-
+    // console.log(Date.now()); // 1708677324631  - возвращает количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC.
     // Intl.DateTimeFormat - предоставляет возможности форматирования даты и времени в соответствии с языковыми правилами.
     // the default locale, and the default time zone - without arguments
-
-
-
+    // console.log(new Intl.DateTimeFormat().format(Date.now())); // 2/23/2024  - if all component properties are undefined, then year, month, and day default to "numeric".
+    // If any of the date-time component options is specified, then dateStyle and timeStyle must be undefined.
 
 
 
 
 
     /////////////////////////////////////////////////////
-      // let _str = ``;
-
-      
-    // console.log(Date.now()); // 1708677324631 , 1708677324631 ...
+    // let _str = ``;
 
 
-    // console.log(new Intl.DateTimeFormat().format(Date.now())); // 2/23/2024
+
+    // console.log(new Intl.DateTimeFormat().format(Date.now()));
+
+    console.log(Intl.DateTimeFormat().format(Date.now()));
 
 
-  
+    // dateStyle
+    // The date formatting style to use when calling format(). Possible values are "full", "long", "medium", and "short".
+
+    // timeStyle
+    // The time formatting style to use when calling format(). Possible values are "full", "long", "medium", and "short".
 
 
+    // const mediumTime = new Intl.DateTimeFormat("en", {
+    //   timeStyle: "medium",
+    //   dateStyle: "short",
+    // });
 
 
     ///////////////////////////////////////////////////////
