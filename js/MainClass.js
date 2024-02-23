@@ -149,9 +149,13 @@ function initLocalTimeEl() {
     ).format(Date.now());
 
 
+    const str_timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+
     localTimeEl.innerHTML = `
       <div class='fw-bold'>${label}</div>
       <div>${str_dateTime}</div>
+      <div>${str_timeZone}</div>
     `;
 
   };
