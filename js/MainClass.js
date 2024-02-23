@@ -172,11 +172,11 @@ function initLocalTimeEl() {
     // The time formatting style to use when calling format(). Possible values are "full", "long", "medium", and "short".
 
 
-    const mediumTime = new Intl.DateTimeFormat("ru", {
+    const mediumTime = new Intl.DateTimeFormat("en", {
       timeStyle: "medium",
       dateStyle: "short",
     });
-    console.log(mediumTime.format(Date.now())); // 
+    console.log(mediumTime.format(Date.now())); // ru: 22.02.2024, 21:12:55  ,   en: 
 
     ///////////////////////////////////////////////////////
 
