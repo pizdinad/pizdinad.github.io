@@ -108,7 +108,6 @@ function initDateTimeMoscowEl() {
     <div>${dateTimeStr2}</div>
   `;
 
-
   };
 
   function clockStart() {
@@ -123,26 +122,32 @@ function initDateTimeMoscowEl() {
 };
 
 
-
-
-//////////////////////////////////////////////////////////////time_format_resolvedOptions - local time (device) :
-const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
-console.log("local time (device) :", time_format_resolvedOptions);
-// ex:
-// {
-//   "locale": "en-US", // "ru-RU"
-//   "calendar": "gregory",
-//   "numberingSystem": "latn",
-//   "timeZone": "Europe/Moscow", // Asia/Karachi
-//   "year": "numeric",
-//   "month": "numeric",
-//   "day": "numeric"
-// }
-
-
-
 function initLocalTimeEl() {
   // Local time (device):
+  const time_format_resolvedOptions = Intl.DateTimeFormat().resolvedOptions();
+  // ex:
+  // {
+  //   "locale": "en-US", // "ru-RU"
+  //   "calendar": "gregory",
+  //   "numberingSystem": "latn",
+  //   "timeZone": "Europe/Moscow", // Asia/Karachi
+  //   "year": "numeric",
+  //   "month": "numeric",
+  //   "day": "numeric"
+  // }
+
+
+  const locale = time_format_resolvedOptions.locale;
+  const timeZone = time_format_resolvedOptions.timeZone;
+  let timerId;
+
+  function setContentDateTime() {
+
+    let dateTime = new Date();
+    let timeZoneNameLong,
+      timeZoneNameShort,
+      dateTimeStr1,
+      dateTimeStr2 = ``;
 
 
 
@@ -156,22 +161,28 @@ function initLocalTimeEl() {
 
 
 
-  localTimeEl.innerHTML = `
-  <div>Local time (device):</div>
- `;
 
+
+
+      localTimeEl.innerHTML = `
+      <div class='fw-bold'>Local time (device):</div>
+      <div>${timeZoneNameShort}</div>
+      <div>${dateTimeStr1}</div>
+      <div>${dateTimeStr2}</div>
+    `;
+
+  };
+
+  function clockStart() {
+    timerId = setInterval(setContentDateTime, 1000);
+    setContentDateTime();
+  };
+  function clockStop() {
+    clearInterval(timerId);
+    timerId = null;
+  };
+  clockStart();
 };
-
-
-
-
-
-//////////////////////////////////////////////////////////////time_format_resolvedOptions: //
-
-
-
-
-
 
 
 async function initYourIP() {
@@ -363,6 +374,7 @@ function initFooterEl() {
 
 
 initDateTimeMoscowEl();
+initLocalTimeEl();
 initYourIP();
 initConvertMonthEl();
 initGetAgeEl();
