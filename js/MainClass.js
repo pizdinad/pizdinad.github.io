@@ -146,6 +146,7 @@ function initLocalTimeEl() {
     // Intl.DateTimeFormat - предоставляет возможности форматирования даты и времени в соответствии с языковыми правилами.
     // the default locale, and the default time zone - without arguments
     // console.log(new Intl.DateTimeFormat().format(Date.now())); // 2/23/2024  - if all component properties are undefined, then year, month, and day default to "numeric".
+    // can be called with or without new
     // If any of the date-time component options is specified, then dateStyle and timeStyle must be undefined.
 
 
@@ -159,7 +160,9 @@ function initLocalTimeEl() {
 
     // console.log(new Intl.DateTimeFormat().format(Date.now()));
 
-    console.log(Intl.DateTimeFormat().format(Date.now()));
+    // console.log(Intl.DateTimeFormat().format(Date.now()));
+
+
 
 
     // dateStyle
@@ -169,11 +172,11 @@ function initLocalTimeEl() {
     // The time formatting style to use when calling format(). Possible values are "full", "long", "medium", and "short".
 
 
-    // const mediumTime = new Intl.DateTimeFormat("en", {
-    //   timeStyle: "medium",
-    //   dateStyle: "short",
-    // });
-
+    const mediumTime = new Intl.DateTimeFormat("ru", {
+      timeStyle: "medium",
+      dateStyle: "short",
+    });
+    console.log(mediumTime.format(Date.now())); // 
 
     ///////////////////////////////////////////////////////
 
