@@ -157,7 +157,7 @@ function initLocalTimeEl() {
 
 
   localTimeEl.innerHTML = `
-  Local time (device):
+  <div>Local time (device):</div>
  `;
 
 };
