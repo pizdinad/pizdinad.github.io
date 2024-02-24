@@ -134,7 +134,7 @@ function initLocalTimeEl() {
     const str_dateTime = Intl.DateTimeFormat(
       undefined,
       {
-        timeStyle: "medium",
+        timeStyle: "short",
         dateStyle: "short",
       }
     ).format(Date.now());
@@ -152,7 +152,7 @@ function initLocalTimeEl() {
   };
 
   function clockStart() {
-    timerId = setInterval(setContentDateTime, 1000);
+    timerId = setInterval(setContentDateTime, 30000);
     setContentDateTime();
   };
   function clockStop() {
@@ -224,7 +224,7 @@ async function initYourIP() {
     };
 
     function clockStart() {
-      timerId = setInterval(setContentDateTime, 1000);
+      timerId = setInterval(setContentDateTime, 30000);
       setContentDateTime();
     };
     function clockStop() {
@@ -402,3 +402,6 @@ initYourIP();
 initConvertMonthEl();
 initGetAgeEl();
 initFooterEl();
+
+
+
