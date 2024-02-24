@@ -23,7 +23,7 @@ function initDateTimeMoscowEl() {
 
     let dateTime = new Date();
     let timeZoneNameLong,
-      timeZoneNameShort,
+      // timeZoneNameShort,
       dateTimeStr1,
       dateTimeStr2 = ``;
 
@@ -39,11 +39,11 @@ function initDateTimeMoscowEl() {
 
 
 
-    timeZoneNameShort = "(" + dateTime.toLocaleString(locale, {
-      "timeZone": timeZone,
-      "year": "numeric",
-      "timeZoneName": "short",
-    }).slice(6) + ")";
+    // timeZoneNameShort = "(" + dateTime.toLocaleString(locale, {
+    //   "timeZone": timeZone,
+    //   "year": "numeric",
+    //   "timeZoneName": "short",
+    // }).slice(6) + ")";
 
 
 
@@ -92,11 +92,10 @@ function initDateTimeMoscowEl() {
     });
 
 
-
+    // <div>${timeZoneNameShort}</div>
 
     dateTimeMoscowEl.innerHTML = `
     <div class='fw-bold'>${timeZoneNameLong}</div>
-    <div>${timeZoneNameShort}</div>
     <div>${dateTimeStr1}</div>
     <div>${dateTimeStr2}</div>
   `;
