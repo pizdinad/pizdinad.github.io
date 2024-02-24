@@ -182,7 +182,7 @@ async function initYourIP() {
 
 
   let geo_str = ``;
-  let dateTime_str = ``;
+
 
 
   if (geo.status === 'success') {
@@ -195,20 +195,52 @@ async function initYourIP() {
 
 
 
-
-// console.log("timezone: ", geo.timezone); //
-
-
-
-
-
-
-
-
   your_ip_el.innerHTML = `
   <div class='fw-bold'>Your ip:</div>
-  <div>${clientIP} (${geo_str}, ${dateTime_str})</div>
+  <div>${clientIP} (${geo_str}, <span id='geoTimeEl'></span>)</div>
   `;
+
+
+
+
+
+
+
+  // geo.timezone
+  function initGeoTime() {
+
+    const geoTimeEl = document.getElementById("geoTimeEl");
+
+    let timerId;
+
+    function setContentDateTime() {
+      // also see: function initLocalTimeEl()
+
+      // const str_dateTime = Intl.DateTimeFormat(
+      //   undefined,
+      //   {
+      //     timeStyle: "medium",
+      //     dateStyle: "short",
+      //   }
+      // ).format(Date.now());
+
+
+      geoTimeEl.textContent = `00-00`;
+    };
+
+    function clockStart() {
+      timerId = setInterval(setContentDateTime, 1000);
+      setContentDateTime();
+    };
+    function clockStop() {
+      clearInterval(timerId);
+      timerId = null;
+    };
+    clockStart();
+
+  };
+  initGeoTime();
+
 
   return Promise.resolve(1);
 }
