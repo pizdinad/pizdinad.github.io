@@ -22,3 +22,11 @@ https://timeweb.cloud/docs/private-network/wireguard-setup
 
 
 
+=========================redirect===========================================
+
+HTTP 301  - Moved Permanently
+to https://pizdinad.deno.dev/
+
+
+=========================redirect//===========================================
+
