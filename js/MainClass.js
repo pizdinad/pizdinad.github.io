@@ -4,23 +4,14 @@ console.log("pizdinad");
 
 
 const dateTimeMoscowEl = document.getElementById("dateTimeMoscowEl");
-
 const localTimeEl = document.getElementById("localTimeEl");
-
 const your_ip_el = document.getElementById("your_ip_el");
-
 const selectMonthDigitEl = document.getElementById("selectMonthDigitEl");
 const selectMonthLongEl = document.getElementById("selectMonthLongEl");
-
 const getAgeFormEl = document.getElementById("getAgeFormEl");
 const birthdayInputEl = document.getElementById("birthdayInputEl");
 const ageEl = document.getElementById("ageEl");
-
 const endCopyEl = document.getElementById("endCopyEl");
-
-
-
-
 
 
 function initDateTimeMoscowEl() {
@@ -185,7 +176,10 @@ async function initYourIP() {
   };
   const response = await fetch(input, init);
   const json = await response.json();
-  const { clientIP, geo } = json; // ex: geo:  {"status":"fail"} || {status: 'success', country: 'The Netherlands', city: 'Amsterdam', query: '146.0.78.177'}
+
+  // ex: geo:  {"status":"fail"} || {status: 'success', country: 'The Netherlands', city: 'Amsterdam', query: '146.0.78.177'}
+  const { clientIP, geo } = json;
+
   let geo_str = ``;
 
   if (geo.status === 'success') {
@@ -360,72 +354,9 @@ function initFooterEl() {
 };
 
 
-
 initDateTimeMoscowEl();
 initLocalTimeEl();
 initYourIP();
 initConvertMonthEl();
 initGetAgeEl();
 initFooterEl();
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-// //// ДОПОЛНИТЕЛЬНО (OTHER timeZone):
-// // ) time based on provider location   (navigator coords)
-// // ) time based on IP location         (geoIP city)
-
-
-
-
-// ////////////////////////////////////Geolocation:
-//  // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
-// // https://support.google.com/maps/answer/18539?hl=ru&co=GENIE.Platform%3DAndroid - Как найти координаты или выполнить поиск по широте и долготе
-// // ex: 55.6105728, 37.584896 (Широта/latitude, Долгота/longitude)
-
-
-// if ("geolocation" in navigator) {
-//   console.log("местоположение доступно ");
-
-//   const geo = navigator.geolocation;
-
-
-
-//   var options = {
-//     enableHighAccuracy: true,
-//     timeout: 5000,
-//     maximumAge: 0,
-//   };
-
-//   function success(pos) {
-//     var crd = pos.coords;
-
-//     console.log("Ваше текущее местоположение:"); // !!! ОПРЕДЕЛЯЕТСЯ ПОЗИЦИЯ БРОУЗЕРА (НЕ КОНЕЧНОЙ ТОЧКИ С КОТОРОЙ ВХОДИТ НА САЙТ , НАПРИМЕР VPN)
-//     console.log(`Широта: ${crd.latitude} `);
-//     console.log(`Долгота: ${crd.longitude} `);
-//     console.log(`Плюс - минус ${crd.accuracy} метров.`);
-//     console.log(`высота над уровнем моря: ${crd.altitude} `);
-//   }
-
-//   function error(err) {
-//     console.warn(`ERROR(${err.code}): ${err.message} `);
-//   }
-
-//   geo.getCurrentPosition(success, error, options);
-
-
-
-
-// } else {
-//   console.log("местоположение НЕ доступно");
-// }
-
-// ////////////////////////////////////Geolocation: //
-
