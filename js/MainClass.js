@@ -202,11 +202,6 @@ async function initYourIP() {
 
 
 
-
-
-
-
-  // geo.timezone
   function initGeoTime() {
 
     const geoTimeEl = document.getElementById("geoTimeEl");
@@ -216,16 +211,16 @@ async function initYourIP() {
     function setContentDateTime() {
       // also see: function initLocalTimeEl()
 
-      // const str_dateTime = Intl.DateTimeFormat(
-      //   undefined,
-      //   {
-      //     timeStyle: "medium",
-      //     dateStyle: "short",
-      //   }
-      // ).format(Date.now());
+      const str_dateTime = Intl.DateTimeFormat(
+        undefined,
+        {
+          timeStyle: "short",
+          dateStyle: "short",
+          timeZone: geo.timezone,
+        }
+      ).format(Date.now());
 
-
-      geoTimeEl.textContent = `00-00`;
+      geoTimeEl.textContent = str_dateTime;
     };
 
     function clockStart() {
