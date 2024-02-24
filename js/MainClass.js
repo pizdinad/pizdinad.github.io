@@ -171,6 +171,7 @@ async function initYourIP() {
   const init = {
     mode: 'cors',
     method: 'POST',
+    cache: "no-store",
     // headers: {
     //   'Content-Type': 'application/json'
     // },
