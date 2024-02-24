@@ -177,7 +177,7 @@ async function initYourIP() {
   const response = await fetch(input, init);
   const json = await response.json();
 
-  // ex: geo:  {"status":"fail"} || {status: 'success', country: 'The Netherlands', city: 'Amsterdam', query: '146.0.78.177'}
+  // ex: geo:  {"status":"fail"} || {status: 'success', country: 'The Netherlands', city: 'Amsterdam', query: '146.0.78.177',"timezone": "America/Toronto"}
   const { clientIP, geo } = json;
 
   let geo_str = ``;
@@ -189,6 +189,13 @@ async function initYourIP() {
     geo_str += `(${country}, ${city})`;
 
   }
+
+
+
+
+console.log("timezone: ", geo.timezone); //
+
+
 
   your_ip_el.innerHTML = `
   <div class='fw-bold'>Your ip:</div>
