@@ -169,9 +169,9 @@ async function initYourIP() {
   const input = "https://2ip.deno.dev/api/get-ip";
   // с точки зрения CORS - это простой запрос:
   const init = {
-    mode: 'cors',
+    // mode: 'cors',
     method: 'POST',
-    cache: "no-store",
+    // cache: "no-store",
     // headers: {
     //   'Content-Type': 'application/json'
     // },
