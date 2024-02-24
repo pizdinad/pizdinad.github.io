@@ -197,7 +197,7 @@ async function initYourIP() {
 
   your_ip_el.innerHTML = `
   <div class='fw-bold'>Your ip:</div>
-  <div>${clientIP} (${geo_str}, <span id='geoTimeEl'></span>)</div>
+  <div>${clientIP} (${geo_str}: <span id='geoTimeEl'></span>)</div>
   `;
 
 
