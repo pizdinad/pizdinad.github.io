@@ -399,8 +399,8 @@ function initFooterEl() {
 
 
 initDateTimeMoscowEl();
-initLocalTimeEl();
-initYourIP();
+// initLocalTimeEl();
+// initYourIP();
 initConvertMonthEl();
 initGetAgeEl();
 initFooterEl();
