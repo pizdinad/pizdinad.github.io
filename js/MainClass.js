@@ -180,26 +180,34 @@ async function initYourIP() {
   // ex: geo:  {"status":"fail"} || {status: 'success', country: 'The Netherlands', city: 'Amsterdam', query: '146.0.78.177',"timezone": "America/Toronto"}
   const { clientIP, geo } = json;
 
+
   let geo_str = ``;
+  let dateTime_str = ``;
+
 
   if (geo.status === 'success') {
 
     const { country, city } = geo;
 
-    geo_str += `(${country}, ${city})`;
+    geo_str += `${country}, ${city}`;
 
   }
 
 
 
 
-console.log("timezone: ", geo.timezone); //
+// console.log("timezone: ", geo.timezone); //
+
+
+
+
+
 
 
 
   your_ip_el.innerHTML = `
   <div class='fw-bold'>Your ip:</div>
-  <div>${clientIP} ${geo_str}</div>
+  <div>${clientIP} (${geo_str}, ${dateTime_str})</div>
   `;
 
   return Promise.resolve(1);
