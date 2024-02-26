@@ -1,0 +1,1 @@
+see https://github.com/pizdinad/pizdinad.deno.dev
