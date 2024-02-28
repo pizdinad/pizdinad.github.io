@@ -1,1 +1,0 @@
-# https://pizdinad.github.io/
