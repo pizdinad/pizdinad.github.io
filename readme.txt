@@ -1,1 +1,1 @@
-pizdinad.github.io HTTP 301  - Moved Permanently to pizdinad.deno.dev 
+# pizdinad.github.io HTTP 301  - Moved Permanently to pizdinad.deno.dev 
